@@ -17,7 +17,7 @@ class StopWatch{
     
     private var nsTimer: NSTimer = NSTimer()
     var time = Time()
-    var oldLapTime: Double = 0.0
+    private var oldLapTime: Double = 0.0
     weak var delegate: StopWatchDelegate?
     
     
@@ -46,7 +46,7 @@ class StopWatch{
         return String(format: "%02d:%02d.%d", UInt(gapTime / 60), UInt(gapTime % 60), UInt(gapTime * 10 % 10)) ?? "00:00:0"
     }
     
-   @objc func didFireTimer()  {
+    @objc private func didFireTimer()  {
         delegate?.updateElapsedTime(time.elapsedTimeAsString)
     }
 }

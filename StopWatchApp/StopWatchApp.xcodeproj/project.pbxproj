@@ -13,6 +13,7 @@
 		C936CCC91DDF3666009AF8E7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C936CCC81DDF3666009AF8E7 /* Assets.xcassets */; };
 		C936CCD71DDF3666009AF8E7 /* StopWatchAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C936CCD61DDF3666009AF8E7 /* StopWatchAppTests.swift */; };
 		C936CCE71DDF3E20009AF8E7 /* MainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C936CCE61DDF3E20009AF8E7 /* MainController.swift */; };
+		C93EDFF81E095A3C00F0E48C /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93EDFF71E095A3C00F0E48C /* TestViewController.swift */; };
 		C9A9FB3E1DE2BAF900D233AA /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9A9FB3C1DE2BAF900D233AA /* LaunchScreen.xib */; };
 		C9A9FB411DE2BF2200D233AA /* Time.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A9FB401DE2BF2200D233AA /* Time.swift */; };
 /* End PBXBuildFile section */
@@ -38,6 +39,7 @@
 		C936CCD61DDF3666009AF8E7 /* StopWatchAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopWatchAppTests.swift; sourceTree = "<group>"; };
 		C936CCD81DDF3666009AF8E7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C936CCE61DDF3E20009AF8E7 /* MainController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainController.swift; path = Source/Controller/MainController.swift; sourceTree = "<group>"; };
+		C93EDFF71E095A3C00F0E48C /* TestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TestViewController.swift; path = Source/Controller/TestViewController.swift; sourceTree = "<group>"; };
 		C9A9FB3D1DE2BAF900D233AA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		C9A9FB401DE2BF2200D233AA /* Time.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Time.swift; path = Source/Model/Time.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -118,6 +120,7 @@
 		C936CCE51DDF3DF3009AF8E7 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				C93EDFF71E095A3C00F0E48C /* TestViewController.swift */,
 				C936CCE61DDF3E20009AF8E7 /* MainController.swift */,
 			);
 			name = Controller;
@@ -251,6 +254,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C93EDFF81E095A3C00F0E48C /* TestViewController.swift in Sources */,
 				C936CCE71DDF3E20009AF8E7 /* MainController.swift in Sources */,
 				C92996991DEEA7EB005C34E0 /* StopWatch.swift in Sources */,
 				C936CCC21DDF3666009AF8E7 /* AppDelegate.swift in Sources */,
@@ -392,7 +396,7 @@
 				INFOPLIST_FILE = StopWatchApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = sad.rds.csd;
+				PRODUCT_BUNDLE_IDENTIFIER = com.robosoft.in;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -405,7 +409,7 @@
 				INFOPLIST_FILE = StopWatchApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = sad.rds.csd;
+				PRODUCT_BUNDLE_IDENTIFIER = com.robosoft.in;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

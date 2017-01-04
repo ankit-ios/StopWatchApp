@@ -33,19 +33,7 @@ class MainController: UIViewController {
     var state: States = .initial {
         
         didSet {
-            if state == .initial {
-                startButtonOutlet.setTitle("Start", forState: .Normal)
-                lapButtonOutlet.setTitle("Reset", forState: .Normal)
-                
-            } else if state == .running {
-                startButtonOutlet.setTitle("Pause", forState: .Normal)
-                lapButtonOutlet.setTitle("Lap", forState: .Normal)
-                
-            } else {
-                startButtonOutlet.setTitle("Restart", forState: .Normal)
-                lapButtonOutlet.setTitle("Reset", forState: .Normal)
-                
-            }
+            updateUI(state)
         }
     }
     
@@ -63,15 +51,16 @@ class MainController: UIViewController {
     // MARK: -IBOutlet methods
     @IBAction func startButtonAction(sender: AnyObject) {
         
-        if state == .initial {
+        switch state {
+        case .initial:
             state = .running
             stopWatch.start()
             
-        } else if state == .running {
+        case .running:
             state = .pause
             stopWatch.pause()
             
-        } else {
+        case .pause:
             state = .running
             stopWatch.start()
         }
@@ -79,13 +68,17 @@ class MainController: UIViewController {
     
     @IBAction func lapButtonAction(sender: AnyObject) {
         
-        if state == .running {
+        switch state {
+        case .initial:
+            return
+            
+        case .running:
             let lapTime = stopWatch.lap()
             print(lapTime)
             lappedHistory.insert(lapTime, atIndex: 0)
             lapHistoryTableView.insertRowsAtIndexPaths([NSIndexPath(forRow: 0, inSection: 0)], withRowAnimation: .Middle)
-            
-        } else if state == .pause {
+
+        case .pause:
             state = .initial
             resetStopWatch()
         }
@@ -107,6 +100,22 @@ extension MainController {
         timeLabelOutlet.text = "00:00.0"
         lappedHistory.removeAll(keepCapacity: true)
         lapHistoryTableView.reloadData()
+    }
+    
+    func updateUI(state: States) {
+        switch state {
+        case .initial:
+            startButtonOutlet.setTitle("Start", forState: .Normal)
+            lapButtonOutlet.setTitle("Reset", forState: .Normal)
+            
+        case .running:
+            startButtonOutlet.setTitle("Pause", forState: .Normal)
+            lapButtonOutlet.setTitle("Lap", forState: .Normal)
+            
+        case .pause:
+            startButtonOutlet.setTitle("Restart", forState: .Normal)
+            lapButtonOutlet.setTitle("Reset", forState: .Normal)
+        }
     }
 }
 
